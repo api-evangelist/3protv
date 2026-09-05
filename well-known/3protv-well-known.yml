@@ -1,0 +1,124 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live anonymous GET probes on 2026-09-05 of the five named /.well-known/ paths across every
+  host this record knows: the registrable domain 3protv.com and its www host, the web
+  application host apps.3protv.com, and the application API host api.3protv.com.
+note: >-
+  NO WELL-KNOWN DOCUMENT IS SERVED. 3protv.com and www.3protv.com are a client-rendered
+  single-page application whose catch-all answers HTTP 200 with the same 1,887-byte HTML
+  shell (`<title>삼프로TV</title>`, `<div id="3protv-homepage-app">`) for every path,
+  including paths that cannot exist — these 200s are SPA shells, NOT documents, and are
+  recorded as misses. apps.3protv.com (Next.js) and api.3protv.com (Node/Express behind an
+  AWS ALB) return honest 404s on every probed path. No WellKnown or SecurityTxt pointer is
+  emitted, because no path returned a real document.
+hosts:
+- host: 3protv.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA shell HTML, not a security.txt — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell HTML, not a document — counted as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell HTML, not a document — counted as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell HTML, not a document — counted as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA shell HTML, not a document — counted as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA shell HTML, not an AgentCard — counted as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA shell HTML, not an AgentCard — counted as a miss
+- host: www.3protv.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA shell HTML, not a security.txt — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA shell HTML — miss
+- host: apps.3protv.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.3protv.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

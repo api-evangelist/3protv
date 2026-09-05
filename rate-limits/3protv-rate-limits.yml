@@ -1,0 +1,20 @@
+generated: '2026-09-05'
+method: searched
+source: https://apps.3protv.com/faq
+limit_count: 0
+note: >-
+  No rate limits are published, because no API is published. 3ProTV operates a private
+  application backend at https://api.3protv.com (HTTP 200, application/json, `server: EBC`,
+  behind an AWS ALB) that serves its own web and mobile apps; it exposes no documented
+  endpoints, no reference, and no rate-limit policy. No X-RateLimit-*, RateLimit-* or
+  Retry-After headers were observed on the anonymous responses that were probed
+  (https://api.3protv.com/ and https://api.3protv.com/health).
+rate_limits: []
+response_headers: []
+evidence:
+- url: https://api.3protv.com/
+  status: 200
+  note: 'Returns `{}`; response headers carry no rate-limit signalling'
+- url: https://api.3protv.com/health
+  status: 200
+  note: Process health JSON; no rate-limit headers

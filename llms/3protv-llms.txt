@@ -1,0 +1,43 @@
+# 3ProTV (삼프로TV)
+
+> 3ProTV, operated by E-Broadcasting Co. of Seoul, South Korea, is the country's largest
+> economic and financial media platform. Founded in 2018 as a YouTube-native economics
+> broadcaster, it now runs a subscription content business covering live market programming,
+> original news and research archives, premium lectures and seminars, paid membership clubs,
+> and publishing. Content is delivered through the web application at apps.3protv.com and
+> native iOS and Android apps.
+
+## Status of the developer surface
+
+3ProTV publishes **no public API**. As of 2026-09-05 there is no developer portal, no API
+reference, no machine-readable contract (OpenAPI, AsyncAPI, GraphQL SDL, gRPC, WSDL), no
+SDK on any public package registry, no CLI, no webhook catalog, no MCP server and no A2A
+agent card. The company ships software as an end-user product only.
+
+A private application backend exists at `https://api.3protv.com` — it answers `{}` at the
+root with `content-type: application/json` and serves a process `/health` document — but it
+is the undocumented backend for 3ProTV's own apps, carries no published contract, and is not
+offered to third-party developers. This profile does not treat it as an API product.
+
+## Public pages
+
+- [3ProTV](https://3protv.com): Marketing site (client-rendered single-page app)
+- [3ProTV web app](https://apps.3protv.com): The product — programming, originals, lectures, membership
+- [Subscription](https://apps.3protv.com/membership/intro): 삼프로 구독 membership tiers (prices rendered client-side)
+- [Customer center / FAQ](https://apps.3protv.com/faq): Support, including help@3protv.com
+- [Terms of service](https://apps.3protv.com/policy/terms)
+- [Privacy policy](https://apps.3protv.com/policy/privacy)
+- [YouTube channel](https://www.youtube.com/@3protv): 삼프로TV 3PROTV, the primary distribution channel
+
+## Optional
+
+- [Company profile](https://apps.3protv.com/company): Corporate information (client-rendered)
+- [Originals — news](https://apps.3protv.com/original/news)
+- [App Store listing](https://apps.apple.com/us/app/3protv/id1445804704)
+- [Google Play listing](https://play.google.com/store/apps/details?id=kr.ebroadcasting.cheezepie)
+
+## Notes for agents
+
+- There is nothing here to call programmatically. Do not attempt to use `api.3protv.com`:
+  it is a private first-party backend with no published contract or terms of use.
+- Content is Korean-language. The customer contact of record is help@3protv.com.

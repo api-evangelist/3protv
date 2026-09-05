@@ -1,17 +1,34 @@
 aid: 3protv
 name: 3ProTV
-description: '3ProTV is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  3ProTV (삼프로TV), operated by E-Broadcasting Co. of Seoul, South Korea, is the country's
+  largest economic and financial media platform — a YouTube-native economics broadcaster
+  founded in 2018 that has grown into a subscription content business spanning live market
+  programming, original news and research (PDS) archives, premium lectures and seminars,
+  paid membership clubs, and a publishing arm. Its content is distributed through the 3ProTV
+  web application at apps.3protv.com and native iOS and Android apps backed by a private
+  application API at api.3protv.com. 3ProTV is an end-user media and education product: as of
+  this profile it publishes no public developer program, API reference, machine-readable
+  contract, SDK or webhook surface.
+image: https://apps.3protv.com/assets/images/opengraph-800x400.png
 url: https://raw.githubusercontent.com/api-evangelist/3protv/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment
 specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 tags:
 - Company
+- Media
+- Financial Media
+- Video
+- Streaming
+- Subscription
+- Education
+- South Korea
+- Content
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +37,52 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/3protv
+  url: https://3protv.com
+- type: About
+  url: https://apps.3protv.com/company
+- type: Support
+  url: https://apps.3protv.com/faq
+- type: TermsOfService
+  url: https://apps.3protv.com/policy/terms
+- type: PrivacyPolicy
+  url: https://apps.3protv.com/policy/privacy
+- type: Pricing
+  url: https://apps.3protv.com/membership/intro
+- type: YouTube
+  url: https://www.youtube.com/@3protv
+- type: LLMsTxt
+  url: llms/3protv-llms.txt
+- type: DomainSecurity
+  url: security/3protv-domain-security.yml
+- type: Plans
+  url: plans/3protv-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/3protv-rate-limits.yml
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    3ProTV is a Korean consumer financial-media subscription business whose only machine
+    surface is the private backend for its own apps at api.3protv.com — it answers `{}` at
+    the root and serves a /health document, but returns 404 on /openapi.json, /swagger.json,
+    /api-docs, /graphql and every /.well-known/ path, and the company publishes no developer
+    portal, reference, SDK, package or webhook catalog anywhere.
+  evidence:
+  - url: https://api.3protv.com/openapi.json
+    status: 404
+  - url: https://api.3protv.com/api-docs
+    status: 404
+  - url: https://api.3protv.com/graphql
+    status: 404
+  - url: https://apps.3protv.com/openapi.json
+    status: 404
+  - url: https://apps.3protv.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.3protv.com/
+    status: 200
+  checked: '2026-09-05'

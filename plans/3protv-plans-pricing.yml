@@ -1,0 +1,21 @@
+generated: '2026-09-05'
+method: searched
+source: https://apps.3protv.com/membership/intro
+plan_count: 0
+note: >-
+  3ProTV sells consumer content subscriptions (삼프로 구독 membership, premium lecture
+  purchases, membership clubs), not API access. The subscription intro page at
+  https://apps.3protv.com/membership/intro returns HTTP 200 but renders its tier and price
+  table client-side in JavaScript, so no plan names, prices, currencies or billing periods
+  are readable from the served HTML, and the sign-up and payment routes that would carry
+  them (/membership/signup/, /membership/signup/payment/, /membership/purchase-ticket/) are
+  Disallowed in https://apps.3protv.com/robots.txt. There are no API plans of any kind:
+  3ProTV publishes no developer program, so there is nothing to price.
+plans: []
+evidence:
+- url: https://apps.3protv.com/membership/intro
+  status: 200
+  note: 'Live route (title: 삼프로 구독 | 삼프로TV); pricing table is client-rendered'
+- url: https://apps.3protv.com/robots.txt
+  status: 200
+  note: Disallows every membership signup/payment path
